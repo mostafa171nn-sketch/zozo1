@@ -1,209 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love ❤️</title>
-  <link rel="icon" type="image/png" href="ze2rda.jpg" />
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
+  <link rel="icon" type="image/png" href="ze2rda.jpg" style="border-radius: 40%;" />
+ 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial;
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  overflow: hidden;
-  text-align: center;
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow: hidden;
+      text-align: center;
+    }
+.ilo:hover{
+top: 7px;
+background-color: #000;
+border-radius: 10cm;}
+.prevPages:hover{font-size: large;
+ background-color: #ffffff !important;
 }
-
-button {
-  border: none;
-  padding: 15px 35px;
-  font-size: 22px;
-  border-radius: 50px;
-  cursor: pointer;
-  margin: 10px;
-  transition: all .5s ease;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  font-weight: bold;
-  font-style: oblique;
+.nextPage:hover{
+  font-size: large;
+  background-color: #ffffff  !important;
 }
+    button {
+      border: none;
+      padding: 15px 35px;
+      font-size: 22px;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all .5s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      font-style: oblique;
+    }
 
-#yes {
-  background: #ff2e63;
-  color: white;
-  box-shadow: 10px 20px 15px rgba(0,0,0,0.2);
-}
+    #yes {
+      background: #ff2e63;
+      color: white;
+      box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.2);
+    }
 
-#no {
-  background: white;
-  color: #ff2e63;
-  position: relative;
-  box-shadow: 10px 20px 15px rgba(0,0,0,0.2);
-}
+    #no {
+      background: white;
+      color: #ff2e63;
+      position: relative;
+      box-shadow: 10px 20px 15px rgba(0, 0, 0, 0.2);
+    }
 
-.result {
-  display: none;
-  color: white;
-  font-size: 32px;
-  margin-top: 20px;
-}
+    .result {
+      display: none;
+      color: white;
+      font-size: 32px;
+      margin-top: 20px;
+    }
 
-.love-img {
-  display: none;
-  margin-top: 30px;
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  animation: fadeIn 1s ease-in-out;
-}
+    .love-img {
+      display: none;
+      margin-top: 30px;
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
 
-#buttons {
-  margin-top: 40px;
-}
+    #buttons {
+      margin-top: 40px;
+    }
+ #yes:hover{
+  color: #f44a91 !important;
+background-color: #ffffff;
 
-h1 {
-  color: white;
-  font-size: 38px;
-  margin-bottom: 40px;
-  transition: .5s;
-}
+  }
+ #no:hover{
+  color:white ;
+  background-color: #fa4a67;
+ }
+    h1 {
+      color: white;
+      font-size: 38px;
+      margin-bottom: 40px;
+      transition: .5s;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
 
-.heart {
-  position: absolute;
-  color: #ff2e63;
-  font-size: 20px;
-  animation: float 6s linear infinite;
-}
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-@keyframes float {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-100vh); opacity: 0; }
-}
+    .heart {
+      position: absolute;
+      color: #ff2e63;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
 
-.book {
-  position: relative;
-  border-radius: 10px;
-  width: 220px;
-  height: 300px;
-  background-color: whitesmoke;
-  box-shadow: 1px 1px 12px #000;
-  transform: preserve-3d;
-  perspective: 2000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
 
-.cover {
-  top: 0;
-  position: absolute;
-  background-color: rgb(240, 240, 240);
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.5s;
-  transform-origin: 0;
-  box-shadow: 1px 1px 12px #f6739a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
 
-/* .book:hover .cover {
+    .book {
+      position: relative;
+      border-radius: 10px;
+      width: 220px;
+      height: 300px;
+      background-color: whitesmoke;
+      box-shadow: 1px 1px 12px #000;
+      transform: preserve-3d;
+      perspective: 2000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .cover {
+      top: 0;
+      position: absolute;
+      background-color: rgb(240, 240, 240);
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.5s;
+      transform-origin: 0;
+      box-shadow: 1px 1px 12px #f6739a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* .book:hover .cover {
   transform: rotateY(-82deg);
 } */
 
-p {
-  font-size: 20px;
-  font-weight: bolder;
-}
+    p {
+      font-size: 20px;
+      font-weight: bolder;
+    }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  body {
-    padding: 20px;
-  }
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
 
-  h1 {
-    font-size: 32px;
-    margin-bottom: 25px;
-  }
-#result {
-    font-size: 100%;
-    font-weight: bolder;
+      h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+      }
 
-}
-#cover p {
-    font-size: 16% !important;
-font-weight: bolder !important;
-}
-  #buttons {
-    margin-top: 20px;
-  }
-#no{
-   
-    margin-top: 50px;
+      #result {
+        font-size: 100%;
+        font-weight: bolder;
+
+      }
+
+
+      #cover p {
+        font-size: 16% !important;
+        font-weight: bolder !important;
+      }
+
+      #buttons {
+        margin-top: 20px;
+      }
+
+      #no {
+
+        margin-top: 50px;
+
+      }
+
+      button {
+        padding: 14px 28px;
+        font-size: 20px;
+        margin: 8px;
+        border-radius: 25px;
+      }
+
+      #question {
+        font-size: 18px;
+      }
+
+      #questionGif {
+        width: 100% !important;
+        max-width: 320px;
+        height: auto;
+        margin-top: 0px !important;
+        margin: auto !important;
+        margin-left: -40px !important;
+      }
+
+      .book {
+        margin-top: 30px;
+        width: 200px;
+        height: 260px;
+      }
+
+      #loveImg {
+        width: 70% !important;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .result {
+        font-size: 26px;
+        margin-top: 15px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  </style>
   
-}
-  button {
-    padding: 14px 28px;
-    font-size: 20px;
-    margin: 8px;
-    border-radius: 25px;
-  }
- #question{
-    font-size: 18px;
- }
-  #questionGif {
-    width: 100% !important;
-    max-width: 320px;
-    height: auto;
-    margin-top: 0px !important;
-    margin: auto !important;
-    margin-left:-40px !important ;
-  }
-
-  .book {
-    margin-top: 30px;
-    width: 200px;
-    height: 260px;
-  }
-
-  #loveImg {
-    width: 70% !important;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 3%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  }
-
-  .result {
-    font-size: 26px;
-    margin-top: 15px;
-  }
-
-  p {
-    font-size: 18px;
-  }
-}
-</style>
 </head>
-
-  <!-- <body>
+<!-- <body>
 <h1 id="question">
 <span style="color:#ed3a57;font-weight:bolder;font-style:italic; ">I LOVE YOU 💖<br></span>
 <br>
@@ -342,227 +386,55 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>   -->
 
-
-
-
-<!-- <body>
-<h1 id="question">
-<span style="color:#ed3a57;font-weight:bolder;font-style:italic;">I LOVE YOU 💖<br></span>
-<br>
-<span>And I want <span>Us</span> to be together for life 
-<span style="margin-left:-5px;background-color:#fbfbfb;color:#f6739a;border-radius:1cm;padding:4px;font-weight:bolder;">
-Agreed?
-</span>
-</span>
-</h1>
-
-<div>
-<img id="questionGif" src="gif.gif" style="z-index:1;width:220px;margin-top:-30px;margin-bottom:60px;display:inline-block">
-</div>
-
-<div id="buttons">
-<button id="yes">YES</button>
-<button id="no">NO</button>
-</div>
-
-<div class="result" id="result" style="z-index:3; display:none;">
-<span style="font-weight:bolder;">
-I knew you would say
-<span style="background-color:#ffffff;color:#f47b8f;padding:8px;border-radius:10px;">YES</span>
-</span>🥱
-<br><br>
-<span style="color:#f0eeee;font-weight:bold;">
-<span style="background-color:#fbfbfb;color:#f17b8f;border-radius:11px;padding:0 0 0 5px;font-weight:bolder;font-style:italic;">
-You just made me
-</span>
-the happiest person zozo
-</span>
-😍
-<hr>
-
-<div class="book" id="book" style="position:relative;width:260px;height:360px;perspective:2000px;">
-  الغلاف النصي 
-  <div class="cover" style="
-      width:100%;
-      height:100%;
-      border-radius:10px;
-      background:rgb(255, 255, 255);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      z-index:50;
-  ">
-    <p style="
-        color:#f47b8f;
-        padding:20px;
-        text-align:center;
-        width:90%;
-        font-weight:bold;
-        font-size:18px;
-        box-sizing:border-box;
-    ">
-    "I feel like we could be really good together and I'd like us to give it a chance and get closer I hope we stay together and that you want that too"
-    </p>
-  </div>
-</div>
-
-<div style="margin-top:20px;text-align:center;" id="pageButtons">
-<button id="prevPage">Prev</button>
-<button id="nextPage">Next</button>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  let noBtn = document.getElementById("no");
-  let yesBtn = document.getElementById("yes");
-  let result = document.getElementById("result");
-  let question = document.getElementById("question");
-  let questionGif = document.getElementById("questionGif");
-
-  let stage = 0;
-  let positions = [
-    {left:"5%",top:"50%"},{left:"60%",top:"50%"},{left:"50%",top:"10%"},
-    {left:"50%",top:"85%"},{left:"5%",top:"10%"},{left:"60%",top:"10%"},
-    {left:"5%",top:"90%"},{left:"50%",top:"50%"}
-  ];
-  let index = 0;
-
-  function moveNoButton(){
-    if(stage>=5){
-      index=(index+1)%positions.length;
-      noBtn.style.left=positions[index].left;
-      noBtn.style.top=positions[index].top;
-    }
-  }
-
-  noBtn.addEventListener("mouseenter", moveNoButton);
-  noBtn.addEventListener("touchmove", (e)=>{ e.preventDefault(); moveNoButton(); }, {passive:false});
-  noBtn.addEventListener("click", moveNoButton);
-
-  noBtn.onclick = ()=>{
-    stage++;
-    if(stage==1){ noBtn.innerText="Are you sure?😔"; yesBtn.style.transform="scale(3)"; noBtn.style.transform="scale(0.8)"; noBtn.style.marginLeft="120px";}
-    else if(stage==3){ noBtn.innerText="You dont want to reject me 😢"; yesBtn.style.transform="scale(5)"; noBtn.style.transform="scale(0.6)"; noBtn.style.marginLeft="160px";}
-    else if(stage==4){ noBtn.innerText="Press YES please🥺"; yesBtn.style.transform="scale(6)"; noBtn.style.transform="scale(0.4)"; noBtn.style.marginLeft="200px";}
-    else if(stage==5){ noBtn.innerText="Okay its your choice 😔"; yesBtn.style.transform="scale(7)"; noBtn.style.transform="scale(0.3)"; noBtn.style.position="absolute"; noBtn.style.marginLeft="230px";}
-  };
-
-  yesBtn.onclick = ()=>{
-    document.getElementById("buttons").style.display="none";
-    question.style.display="none";
-    questionGif.style.display="none";
-    result.style.display="block";
-
-    setInterval(()=>{
-      let heart=document.createElement("div");
-      heart.className="heart";
-      heart.innerHTML="❤️";
-      heart.style.left=Math.random()*100+"vw";
-      heart.style.bottom=Math.random()*50+"vw";
-      heart.style.fontSize=(Math.random()*30+30)+"px";
-      heart.style.animationDuration=(Math.random()*6+6)+"s";
-      document.body.appendChild(heart);
-      setTimeout(()=>{ heart.remove(); },8000);
-    },400);
-
-    // ✅ الصور للصفحات 2-50 فقط
-    let images=["sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg", ]; // الصفحة الأولى ستكون الغلاف
-    for(let i=1;i<=50;i++){ images.push(``); }
-
-    let book=document.getElementById("book");
-    let pages=[];
-    for(let i=1;i<images.length;i++){
-      let page=document.createElement("div");
-      page.className="page";
-      page.style.position="absolute";
-      page.style.width="85%";
-        page.style.height="70%";
-        page.style.border="10px solid rgb(244 244 244)";
-                page.style.borderBottom="20px 2solid white";
-        page.style.top="4%";
-      page.style.borderRadius="10px";
-      page.style.transformOrigin="left";
-      page.style.transition="transform 1s";
-      page.style.zIndex=50-i;
-
-      let img=document.createElement("img");
-      img.src=images[i];
-      img.style.width="89%";
-      img.style.borderRadius="10px";
-      img.style.display="block";
-      img.style.margin="auto";
-      img.style.marginTop="10px";
-
-      page.appendChild(img);
-      book.appendChild(page);
-      pages.push(page);
-    }
-
-    let cover=document.querySelector(".cover");
-
-    // Flip pages
-    let currentPage=0;
-    document.getElementById("nextPage").onclick = ()=>{
-      if(currentPage<pages.length){
-        pages[currentPage].style.transform="rotateY(-180deg)";
-        currentPage++;
-        if(currentPage===1 && cover){ cover.style.display="none"; }
-      }
-    }
-    document.getElementById("prevPage").onclick = ()=>{
-      if(currentPage>0){
-        currentPage--;
-        pages[currentPage].style.transform="rotateY(0deg)";
-        if(currentPage===0 && cover){ cover.style.display="flex"; }
-      }
-    }
-
-  };
-
-});
-</script>
-</body> -->
-
-
 <body>
-<h1 id="question">
-<span style="color:#ed3a57;font-weight:bolder;font-style:italic;">I LOVE YOU 💖<br></span>
-<br>
-<span>And I want <span>Us</span> to be together for life 
-<span style="margin-left:-5px;background-color:#fbfbfb;color:#f6739a;border-radius:1cm;padding:4px;font-weight:bolder;">
-Agreed?
-</span>
-</span>
-</h1>
+  <audio id="music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-<div>
-<img id="questionGif" src="gif.gif" style="z-index:1;width:220px;margin-top:-30px;margin-bottom:60px;display:inline-block">
-</div>
 
-<div id="buttons">
-<button id="yes">YES</button>
-<button id="no">NO</button>
-</div>
 
-<div class="result" id="result" style="z-index:3; display:none;">
-<span style="font-weight:bolder;">
-I knew you would say
-<span style="background-color:#ffffff;color:#f47b8f;padding:8px;border-radius:10px;">YES</span>
-</span>🥱
-<br><br>
-<span style="color:#f0eeee;font-weight:bold;">
-<span style="background-color:#fbfbfb;color:#f17b8f;border-radius:11px;padding:0 0 0 5px;font-weight:bolder;font-style:italic;">
-You just made me
-</span>
-the happiest person zozo
-</span>
-😍
-<hr>
+  <h1 id="question">
+    <div class="ilo">
+    <span style="color:#ff7c92;font-weight:bolder;font-style:italic;" >I LOVE YOU 💖<br></span></div>
+    <br>
+    <span style="font-style:oblique ;">And I want <span>Us</span> to be together for life
+      <span
+        style="margin-left:-5px;background-color:#fbfbfb;color:#f6739a;border-radius:1cm;padding:4px;font-weight:bolder;">
+        Agreed?
+      </span>
+    </span>
+  </h1>
 
-<div class="book" id="book" style="position:relative;width:260px;height:360px;perspective:2000px;">
-  <!-- الغلاف النصي -->
-  <div class="cover" style="
+  <div>
+    <img id="questionGif" src="gif.gif"
+      style="z-index:1;width:220px;margin-top:-30px;margin-bottom:60px;display:inline-block">
+  </div>
+
+  <div id="buttons">
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+  </div>
+
+  <div class="result" id="result" style="z-index:3; display:none;">
+    <span style="font-weight:bolder; font-style:oblique ;">
+      I knew you would say
+      <span style="background-color:#ffffff;color:#f47b8f;padding:8px;border-radius:10px;">YES</span>
+    </span>🥱
+    <br><br>
+    <span style="color:#f0eeee;font-weight:bold;">
+      <span
+        style="background-color:#fbfbfb;color:#f17b8f;border-radius:11px;padding:0 0 0 5px;font-weight:bolder;font-style:italic; font-style:oblique ;">
+        You just made me
+      </span>
+      the happiest person zozo
+    </span>
+    
+    <hr>
+
+    <div class="book" id="book" style="position:relative;width:260px;height:360px;perspective:2000px;">
+      <!-- الغلاف النصي -->       
+
+      <div class="cover" style="
       width:100%;
       height:100%;
       border-radius:10px;
@@ -574,7 +446,9 @@ the happiest person zozo
       z-index:100;
       transform-style: preserve-3d;
   ">
-    <p style="
+          <h5 style="margin-top: 5px; z-index: index 100; transform-style: preserve-3d; display:inline-block; color: #ffffff; background-color: #515050;font-size:medium; font-weight: bolder; border-radius: 20cm; padding: 5px;" >Our Gallary</h5>
+
+        <p style="
         color:#f47b8f;
         padding:20px;
         text-align:center;
@@ -583,131 +457,169 @@ the happiest person zozo
         font-size:18px;
         box-sizing:border-box;
     ">
-    "I feel like we could be really good together and I'd like us to give it a chance and get closer I hope we stay together and that you want that too"
-    </p>
-  </div>
-</div>
+          "I feel like we could be really good together and I'd like us to give it a chance and get closer I hope we
+          stay together and that you want that too and I hope we fill this book together b 2ezn el Mawla "
+        </p>
+      </div>
+    </div>
 
-<div style="margin-top:20px;text-align:center; " id="pageButtons">
-<button id="prevPage" style="background-color: #ed3a57;">Prev</button>
-<button id="nextPage" style="background-color: #fc6a82;">Next</button>
-</div>
+    <div style="margin-top:20px;text-align:center; " id="pageButtons">
+      <button id="prevPage" style="background-color: #ed3a57;" class="prevPages">Prev</button>
+      <button id="nextPage" style="background-color: #fc6a82;" class="nextPage">Next</button>
+    </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  let noBtn = document.getElementById("no");
-  let yesBtn = document.getElementById("yes");
-  let result = document.getElementById("result");
-  let question = document.getElementById("question");
-  let questionGif = document.getElementById("questionGif");
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let noBtn = document.getElementById("no");
+        let yesBtn = document.getElementById("yes");
+        let result = document.getElementById("result");
+        let question = document.getElementById("question");
+        let questionGif = document.getElementById("questionGif");
 
-  let stage = 0;
-  let positions = [
-    {left:"5%",top:"50%"},{left:"60%",top:"50%"},{left:"50%",top:"10%"},
-    {left:"50%",top:"85%"},{left:"5%",top:"10%"},{left:"60%",top:"10%"},
-    {left:"5%",top:"90%"},{left:"50%",top:"50%"}
-  ];
-  let index = 0;
+        let stage = 0;
+        let positions = [
+          { left: "5%", top: "50%" }, { left: "60%", top: "50%" }, { left: "50%", top: "10%" },
+          { left: "50%", top: "85%" }, { left: "5%", top: "10%" }, { left: "60%", top: "10%" },
+          { left: "5%", top: "90%" }, { left: "50%", top: "50%" }
+        ];
+        let index = 0;
 
-  function moveNoButton(){
-    if(stage>=5){
-      index=(index+1)%positions.length;
-      noBtn.style.left=positions[index].left;
-      noBtn.style.top=positions[index].top;
-    }
+        function moveNoButton() {
+          if (stage >= 5) {
+            index = (index + 1) % positions.length;
+            noBtn.style.left = positions[index].left;
+            noBtn.style.top = positions[index].top;
+          }
+        }
+
+        
+
+        noBtn.addEventListener("mouseenter", moveNoButton);
+        noBtn.addEventListener("touchmove", (e) => { e.preventDefault(); moveNoButton(); }, { passive: false });
+        noBtn.addEventListener("click", moveNoButton);
+
+        noBtn.onclick = () => {
+         
+
+
+          stage++;
+          if (stage == 1) { noBtn.innerText = "Are you sure?😔"; yesBtn.style.transform = "scale(3)"; noBtn.style.transform = "scale(0.8)"; noBtn.style.marginLeft = "120px"; }
+          else if (stage == 3) { noBtn.innerText = "You dont want to reject me 😢"; yesBtn.style.transform = "scale(5)"; noBtn.style.transform = "scale(0.6)"; noBtn.style.marginLeft = "160px"; }
+          else if (stage == 4) { noBtn.innerText = "Press YES please🥺"; yesBtn.style.transform = "scale(6)"; noBtn.style.transform = "scale(0.4)"; noBtn.style.marginLeft = "200px"; }
+          else if (stage == 5) { noBtn.innerText = "Okay its your choice 😔"; yesBtn.style.transform = "scale(7)"; noBtn.style.transform = "scale(0.3)"; noBtn.style.position = "absolute"; noBtn.style.marginLeft = "230px"; }
+        };
+        let musicStarted = false;
+
+function startMusic(){
+  if(!musicStarted){
+    const music = document.getElementById("music");
+    music.play().catch(()=>{});
+    musicStarted = true;
   }
+}
 
-  noBtn.addEventListener("mouseenter", moveNoButton);
-  noBtn.addEventListener("touchmove", (e)=>{ e.preventDefault(); moveNoButton(); }, {passive:false});
-  noBtn.addEventListener("click", moveNoButton);
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
 
-  noBtn.onclick = ()=>{
-    stage++;
-    if(stage==1){ noBtn.innerText="Are you sure?😔"; yesBtn.style.transform="scale(3)"; noBtn.style.transform="scale(0.8)"; noBtn.style.marginLeft="120px";}
-    else if(stage==3){ noBtn.innerText="You dont want to reject me 😢"; yesBtn.style.transform="scale(5)"; noBtn.style.transform="scale(0.6)"; noBtn.style.marginLeft="160px";}
-    else if(stage==4){ noBtn.innerText="Press YES please🥺"; yesBtn.style.transform="scale(6)"; noBtn.style.transform="scale(0.4)"; noBtn.style.marginLeft="200px";}
-    else if(stage==5){ noBtn.innerText="Okay its your choice 😔"; yesBtn.style.transform="scale(7)"; noBtn.style.transform="scale(0.3)"; noBtn.style.position="absolute"; noBtn.style.marginLeft="230px";}
-  };
+        yesBtn.onclick = () => {
+          document.getElementById("buttons").style.display = "none";
+          question.style.display = "none";
+          questionGif.style.display = "none";
+          result.style.display = "block";
 
-  yesBtn.onclick = ()=>{
-    document.getElementById("buttons").style.display="none";
-    question.style.display="none";
-    questionGif.style.display="none";
-    result.style.display="block";
+          setInterval(() => {
+            let heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.bottom = Math.random() * 50 + "vw";
+            heart.style.fontSize = (Math.random() * 30 + 30) + "px";
+            heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 8000);
+          }, 400);
 
-    setInterval(()=>{
-      let heart=document.createElement("div");
-      heart.className="heart";
-      heart.innerHTML="❤️";
-      heart.style.left=Math.random()*100+"vw";
-      heart.style.bottom=Math.random()*50+"vw";
-      heart.style.fontSize=(Math.random()*30+30)+"px";
-      heart.style.animationDuration=(Math.random()*6+6)+"s";
-      document.body.appendChild(heart);
-      setTimeout(()=>{ heart.remove(); },8000);
-    },400);
+          // إعداد الصور
+          let images = ["sora50.jpg", "sora50.jpg", "sora50.jpg", "sora50.jpg", "sora50.jpg",];
+          for (let i = 1; i <= 50; i++) { images.push(``); }
 
-    // إعداد الصور
-    let images=["sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg","sora50.jpg",];
-    for(let i=1;i<=50;i++){ images.push(``); }
+          let book = document.getElementById("book");
+          let pages = [];
+          for (let i = 1; i < images.length; i++) {
+            let page = document.createElement("div");
+            page.className = "page";
+            page.style.position = "absolute";
+            page.style.width = "85%";
+            page.style.height = "70%";
+            page.style.border = "10px solid rgb(244 244 244)     ";
+            page.style.top = "4%";
+            page.style.borderRadius = "10px";
+            page.style.transformOrigin = "left";
+            page.style.transition = "transform 1s";
+            page.style.transformStyle = "preserve-3d";
+            page.style.zIndex = images.length - i;
 
-    let book=document.getElementById("book");
-    let pages=[];
-    for(let i=1;i<images.length;i++){
-      let page=document.createElement("div");
-      page.className="page";
-      page.style.position="absolute";
-      page.style.width="85%";
-      page.style.height="70%";
-      page.style.border="10px solid rgb(244 244 244)           ";
-      page.style.top="4%";
-      page.style.borderRadius="10px";
-      page.style.transformOrigin="left";
-      page.style.transition="transform 1s";
-      page.style.transformStyle = "preserve-3d";
-      page.style.zIndex = images.length - i;
+            let img = document.createElement("img");
+            img.src = images[i];
+            img.style.width = "89%";
+            img.style.borderRadius = "10px";
+            img.style.display = "block";
+            img.style.margin = "auto";
+            img.style.marginTop = "10px";
 
-      let img=document.createElement("img");
-      img.src=images[i];
-      img.style.width="89%";
-      img.style.borderRadius="10px";
-      img.style.display="block";
-      img.style.margin="auto";
-      img.style.marginTop="10px";
+            page.appendChild(img);
+            book.appendChild(page);
+            pages.push(page);
+          }
 
-      page.appendChild(img);
-      book.appendChild(page);
-      pages.push(page);
-    }
+     
 
-    let cover=document.querySelector(".cover");
+          let cover = document.querySelector(".cover");
 
-    // Flip pages with 3D effect
-    let currentPage=0;
-    document.getElementById("nextPage").onclick = ()=>{
-      if(currentPage<pages.length){
-        let page = pages[currentPage];
-        page.style.zIndex = pages.length + currentPage + 1;
-        page.style.transform = "rotateY(-180deg)"; // تقليب 3D
-        page.style.boxShadow = "0 0 15px rgba(0,0,0,0.2)"; // ظل خفيف للواقعية
-        currentPage++;
-        if(currentPage===1 && cover){ cover.style.display="none"; }
-      }
-    }
+          // Flip pages with 3D effect
+          let currentPage = 0;
+          document.getElementById("nextPage").onclick = () => {
+            if (currentPage < pages.length) {
+              let page = pages[currentPage];
+              page.style.zIndex = pages.length + currentPage + 1;
+              page.style.transform = "rotateY(-180deg)"; // تقليب 3D
+              page.style.boxShadow = "0 0 15px rgba(0,0,0,0.2)"; // ظل خفيف للواقعية
+              currentPage++;
+              if (currentPage === 1 && cover) { cover.style.display = "none"; }
+            }
+          }
 
-    document.getElementById("prevPage").onclick = ()=>{
-      if(currentPage>0){
-        currentPage--;
-        let page = pages[currentPage];
-        page.style.transform = "rotateY(0deg)";
-        page.style.zIndex = pages.length - currentPage;
-        page.style.boxShadow = "none";
-        if(currentPage===0 && cover){ cover.style.display="flex"; }
-      }
-    }
+            let musicStarted = false;
 
-  };
+function startMusic(){
+  if(!musicStarted){
+    const music = document.getElementById("music");
+    music.play().catch(()=>{});
+    musicStarted = true;
+  }
+}
 
-});
-</script>
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
+
+
+
+
+
+
+          document.getElementById("prevPage").onclick = () => {
+            if (currentPage > 0) {
+              currentPage--;
+              let page = pages[currentPage];
+              page.style.transform = "rotateY(0deg)";
+              page.style.zIndex = pages.length - currentPage;
+              page.style.boxShadow = "none";
+              if (currentPage === 0 && cover) { cover.style.display = "flex"; }
+            }
+          }
+
+        };
+
+      });
+    </script>
 </body>
