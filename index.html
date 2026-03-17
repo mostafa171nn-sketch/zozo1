@@ -29,6 +29,36 @@
       overflow: hidden;
       text-align: center;
     }
+
+
+.book{
+position:relative;
+overflow:visible;
+}
+
+.flower{
+position:absolute;
+left:-150px;
+top:40px;
+width:200px;
+transform:rotate(-45deg) translateY(120px);
+opacity:0;
+transition:all 0.8s ease;
+z-index:1;
+pointer-events:none;
+border-radius: 5.3cm 1cm 5cm 5cm;
+filter: drop-shadow(0 0 35px #f374c0cc)
+        drop-shadow(0 0 35px rgba(238, 180, 203, 0.6))
+        drop-shadow(0 0 50px rgba(242, 174, 190, 0.4));
+}
+
+.book:hover .flower{
+transform:rotate(-35deg) translateY(0px);
+opacity:1;
+}
+
+
+
 .ilo:hover{
 top: 7px;
 background-color: #000;
@@ -163,10 +193,6 @@ background-color: #ffffff;
       justify-content: center;
     }
 
-    /* .book:hover .cover {
-  transform: rotateY(-82deg);
-} */
-
     p {
       font-size: 20px;
       font-weight: bolder;
@@ -188,8 +214,19 @@ background-color: #ffffff;
         font-weight: bolder;
 
       }
+.flower{
+  border-radius: 5.3cm 1cm 5cm 5cm;
+}
+.book:hover{
+transform:translateX(100px);
+transition:transform 0.5s ease;
+}
 
 
+.book:active .flower{
+transform:rotate(-25deg) translateY(0);
+opacity:1;
+}
       #cover p {
         font-size: 16% !important;
         font-weight: bolder !important;
@@ -251,144 +288,6 @@ background-color: #ffffff;
   </style>
   
 </head>
-<!-- <body>
-<h1 id="question">
-<span style="color:#ed3a57;font-weight:bolder;font-style:italic; ">I LOVE YOU 💖<br></span>
-<br>
-<span>And I want <span >Us</span> to be together for life <span style="margin-left: -5px;  background-color: #fbfbfb; color: #f6739a; border-radius: 1cm; padding: 4px; font-weight: bolder;">Agreed?</span></span>
-</h1>
-
-<div>
-<img id="questionGif" src="gif.gif" style="z-index:1;width:220px;margin-top:-30px;margin-bottom:60px;display:inline-block">
-</div>
-
-<div id="buttons">
-<button id="yes">YES</button>
-<button id="no">NO</button>
-</div>
-
-<div class="result" id="result" style="z-index:3;">
-
-<span style=" font-weight:bolder;" >
-I knew you would say
-<span style="background-color:#fbfbfb;color:#f47b8f;padding:8px;border-radius:10px;">YES</span>
-</span>🥱
-
-<br><br>
-
-
-<span style="color:#fbfbfb;font-weight:bold;">
-<span style="background-color:#fbfbfb;color:#f17b8f;border-radius:11px;padding:0 0 0 5px;font-weight:bolder;font-style:italic;">
-You just made me
-</span>
-the happiest person zozo
-</span>
-😍
-
-<hr>
-
-<div class="book">
-
-<p>
-<img id="loveImg" src="zozo1.jpeg" style="display:none;z-index:3; margin: auto; width: 75%; border-radius: 4%;">
-</p>
-
-<div class="cover">
-<p style="color:#f47b8f; padding: 5px; font-weight: lighter;">
-" I feel like we could be really good together and I&#39;d like us to give it a chance and get closer I hope we stay together and that you want that too "
-</p>
-</div>
-
-</div>
-
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  let noBtn = document.getElementById("no");
-  let yesBtn = document.getElementById("yes");
-  let result = document.getElementById("result");
-  let img = document.getElementById("loveImg");
-  let question = document.getElementById("question");
-  let questionGif = document.getElementById("questionGif");
-
-  let stage = 0;
-
-  let positions = [
-    {left: "5%", top: "50%"},
-    {left: "60%", top: "50%"},
-    {left: "50%", top: "10%"},
-    {left: "50%", top: "85%"},
-    {left: "5%", top: "10%"},
-    {left: "60%", top: "10%"},
-    {left: "5%", top: "90%"},
-    {left: "50%", top: "50%"}
-  ];
-
-  let index = 0;
-
-  function moveNoButton() {
-    if (stage >= 5) {
-      index = (index + 1) % positions.length;
-      noBtn.style.left = positions[index].left;
-      noBtn.style.top = positions[index].top;
-    }
-  }
-
-  noBtn.addEventListener("mouseenter", moveNoButton);
-  noBtn.addEventListener("touchmove", (e) => { e.preventDefault(); moveNoButton(); }, {passive: false});
-  noBtn.addEventListener("click", moveNoButton);
-
-  noBtn.onclick = () => {
-    stage++;
-    console.log("NO clicked, stage:", stage); // Debug
-    if (stage == 1) {
-      noBtn.innerText = "Are you sure?😔";
-      yesBtn.style.transform = "scale(3)";
-      noBtn.style.transform = "scale(0.8)";
-      noBtn.style.marginLeft = "120px";
-    } else if (stage == 3) {
-      noBtn.innerText = "You dont want to reject me 😢";
-      yesBtn.style.transform = "scale(5)";
-      noBtn.style.transform = "scale(0.6)";
-      noBtn.style.marginLeft = "160px";
-    } else if (stage == 4) {
-      noBtn.innerText = "Press YES please🥺";
-      yesBtn.style.transform = "scale(6)"; 
-      noBtn.style.transform = "scale(0.4)";
-      noBtn.style.marginLeft = "200px";
-    } else if (stage == 5) {
-      noBtn.innerText = "Okay its your choice 😔";
-      yesBtn.style.transform = "scale(7)";
-      noBtn.style.transform = "scale(0.3)";
-      noBtn.style.position = "absolute";
-      noBtn.style.marginLeft = "230px";
-    }
-  };
-
-  yesBtn.onclick = () => {
-    console.log("YES clicked"); // Debug
-    document.getElementById("buttons").style.display = "none";
-    question.style.display = "none";
-    questionGif.style.display = "none";
-    result.style.display = "block";
-    img.style.display = "block";
-
-    setInterval(() => {
-      let heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.bottom = Math.random() * 50 + "vw";
-      heart.style.fontSize = (Math.random() * 30 + 30) + "px";
-      heart.style.animationDuration = (Math.random() * 6 + 6) + "s";
-      document.body.appendChild(heart);
-      setTimeout(() => { heart.remove(); }, 8000);
-    }, 400);
-  };
-});
-</script>
-</body>   -->
 
 <body>
 
@@ -411,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </h1>
 
   <div>
-    <img id="questionGif" src="gif.gif"
+    <img id="questionGif" src="flower/gif.gif"
       style="z-index:1;width:220px;margin-top:-30px;margin-bottom:60px;display:inline-block">
   </div>
 
@@ -438,6 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="book" id="book" style="position:relative;width:260px;height:360px;perspective:2000px;">
       <!-- الغلاف النصي -->       
+  <img src="flower/flower.png" class="flower">
 
       <div class="cover" style="
       width:100%;
@@ -481,7 +381,6 @@ document.addEventListener('DOMContentLoaded', function() {
         let result = document.getElementById("result");
         let question = document.getElementById("question");
         let questionGif = document.getElementById("questionGif");
-
         let stage = 0;
         let positions = [
           { left: "60%", top: "20%" }, { left: "-20%", top: "50%" }, { left: "70%", top: "60%" },
@@ -497,17 +396,13 @@ document.addEventListener('DOMContentLoaded', function() {
             noBtn.style.top = positions[index].top;
           }
         }
-
         
-
         noBtn.addEventListener("mouseenter", moveNoButton);
         noBtn.addEventListener("touchmove", (e) => { e.preventDefault(); moveNoButton(); }, { passive: false });
         noBtn.addEventListener("click", moveNoButton);
 
         noBtn.onclick = () => {
          
-
-
           stage++;
           if (stage == 1) { noBtn.innerText = "Are you sure?😔"; yesBtn.style.transform = "scale(3)"; noBtn.style.transform = "scale(0.8)"; noBtn.style.marginLeft = "120px"; }
           else if (stage == 3) { noBtn.innerText = "You dont want to reject me 😢"; yesBtn.style.transform = "scale(5)"; noBtn.style.transform = "scale(0.6)"; noBtn.style.marginLeft = "160px"; }
@@ -547,8 +442,18 @@ document.addEventListener("touchstart", startMusic);
           let totalPages = 100; // غير الرقم براحتك
 
 
+
+
+
+
+
+
+
+
+
+
           // إعداد الصور
-          let images = ["sora50.jpg", "sora50.jpg", "sora50.jpg", "sora50.jpg", "sora50.jpg",];
+          let images = ["our-photos/sora50.jpg", "our-photos/sora50.jpg", "our-photos/sora50.jpg", "our-photos/sora50.jpg", "our-photos/sora50.jpg",];
           for (let i = 1; i <= totalPages ; i++) { images.push(``); }
 
           let book = document.getElementById("book");
@@ -579,36 +484,30 @@ document.addEventListener("touchstart", startMusic);
             book.appendChild(page);
             pages.push(page);
           }
-
      
-
           let cover = document.querySelector(".cover");
 
           // Flip pages with 3D effect
           let currentPage = 0;
-          document.getElementById("nextPage").onclick = () => {
-            if (currentPage < pages.length) {
-              let page = pages[currentPage];
-              page.style.zIndex = pages.length + currentPage + 1;
-              page.style.transform = "rotateY(-180deg)"; // تقليب 3D
-              page.style.boxShadow = "0 0 15px rgba(0,0,0,0.2)"; // ظل خفيف للواقعية
-              currentPage++;
-              if (currentPage === 1 && cover) { cover.style.display = "none"; }
-            }
-          }
+         document.getElementById("nextPage").onclick = () => {
+  if (currentPage < pages.length) {
+    let page = pages[currentPage];
+    page.style.zIndex = pages.length + currentPage + 1;
 
+    // حركة للموبايل
+    if(window.innerWidth <= 768){
+      page.style.transform = "rotateY(-180deg) translateX(300px)"; // تزق الصفحة يمين شوية
+    } else {
+      page.style.transform = "rotateY(-180deg)";
+    }
 
+    page.style.transition = "transform 1.0s ease";
+    page.style.boxShadow = "0 0 15px rgba(0,0,0,0.2)";
 
-
-
-
-
-
-
-
-
-          
-
+    currentPage++;
+    if (currentPage === 1 && cover) { cover.style.display = "none"; }
+  }
+}
             let musicStarted = false;
 
 function startMusic(){
@@ -621,10 +520,6 @@ function startMusic(){
 
 document.addEventListener("click", startMusic);
 document.addEventListener("touchstart", startMusic);
-
-
-
-
 
 
           document.getElementById("prevPage").onclick = () => {
